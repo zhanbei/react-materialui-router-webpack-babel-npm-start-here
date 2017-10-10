@@ -1,5 +1,5 @@
 /**
- * Created by fisher at 12:19 on 9/16/17.
+ * Created by fisher at 8:23 on 10/10/17.
  *
  * The home page.
  */
@@ -40,7 +40,7 @@ class App extends React.Component {
 	renderBody = () => {
 		return (
 			<div>
-				<h1>React MaterialUI ReactRouter Webpack Babel NPM Start HERE</h1>
+				<h1>{strings.title}</h1>
 				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
 			</div>
 		)
