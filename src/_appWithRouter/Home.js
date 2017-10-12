@@ -46,7 +46,6 @@ class Home extends React.Component {
 			<div>
 				<h1>{}</h1>
 				<div style={{margin: '20px'}}>
-					<Link to={routes.ROUTE_HOME}>Home</Link><br/>
 					<Link to={routes.ROUTE_ABOUT}>About</Link><br/>
 					<Link to={routes.ROUTE_TOPICS}>Topics</Link><br/>
 				</div>
