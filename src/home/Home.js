@@ -14,6 +14,8 @@ import Typography from 'material-ui/Typography';
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
 
+const title = strings.title;
+
 class App extends React.Component {
 
 	constructor(props) {
@@ -30,7 +32,7 @@ class App extends React.Component {
 			<AppBar position="static">
 				<Toolbar>
 					<Typography type="title">
-						{strings.title}
+						{title}
 					</Typography>
 				</Toolbar>
 			</AppBar>
@@ -40,7 +42,7 @@ class App extends React.Component {
 	renderBody = () => {
 		return (
 			<div>
-				<h1>{strings.title}</h1>
+				<h1>{title}</h1>
 				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
 			</div>
 		)
@@ -48,7 +50,7 @@ class App extends React.Component {
 
 	render() {
 		// Reset the title of current page.
-		document.title = strings.title;
+		document.title = title;
 		console.log('Rending home/Home.js');
 		return (
 			<div>
