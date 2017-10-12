@@ -7,10 +7,16 @@
 module.exports = {
 	title: 'React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
 	home: {
-		title: 'Home - React MaterialUI ReactRouter Webpack Babel NPM Start HERE'
+		title: 'Home - React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
 	},
 	about: {
-		title: 'About - React MaterialUI ReactRouter Webpack Babel NPM Start HERE'
-	}
+		title: 'About - React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
+	},
+	topics: {
+		title: 'Some Topics',
+	},
+	topic: {
+		titlePrefix: 'Topic Page of ',
+	},
 };
 
