@@ -1,7 +1,7 @@
 /**
- * Created by fisher at 8:23 on 10/10/17.
+ * Created by fisher at 13:26 on 9/16/17.
  *
- * The home page.
+ * About page.
  */
 
 'use strict';
@@ -10,13 +10,16 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import IconButton from "material-ui/IconButton";
+import ArrowBackIcon from 'material-ui-icons/ArrowBack';
 
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
 
-const title = strings.title;
+let titlePrefix = strings.topic.titlePrefix;
+let title = titlePrefix;
 
-class App extends React.Component {
+class Topic extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -28,10 +31,14 @@ class App extends React.Component {
 	}
 
 	renderAppBar = () => {
+		const {history} = this.props;
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<Typography type="title">
+					<IconButton color="contrast" onClick={() => history.goBack()}>
+						<ArrowBackIcon/>
+					</IconButton>
+					<Typography type="title" color="inherit">
 						{title}
 					</Typography>
 				</Toolbar>
@@ -40,18 +47,21 @@ class App extends React.Component {
 	};
 
 	renderBody = () => {
+		const {match} = this.props;
 		return (
 			<div>
 				<h1>{title}</h1>
-				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
+				<div>
+					<p>This is the topic page of <span style={{fontWeight: 'bold'}}>{match.params.topicId}</span></p>
+				</div>
 			</div>
 		)
 	};
 
 	render() {
+		const {match} = this.props;
 		// Reset the title of current page.
-		document.title = title;
-		console.log('Rending home/Home.js');
+		document.title = title = titlePrefix + match.params.topicId;
 		return (
 			<div>
 				{this.renderAppBar()}
@@ -63,4 +73,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default Topic;

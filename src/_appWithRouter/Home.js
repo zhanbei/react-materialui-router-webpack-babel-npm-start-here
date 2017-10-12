@@ -1,7 +1,7 @@
 /**
- * Created by fisher at 8:23 on 10/10/17.
+ * Created by fisher at 13:25 on 9/16/17.
  *
- * The home page.
+ * The home page with router.
  */
 
 'use strict';
@@ -10,13 +10,15 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import {Route, Link, HashRouter} from 'react-router-dom'
 
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
+import routes from './../resources/Routes';
 
-const title = strings.title;
+const title = strings.home.title;
 
-class App extends React.Component {
+class Home extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -31,7 +33,7 @@ class App extends React.Component {
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<Typography type="title">
+					<Typography type="title" color="inherit">
 						{title}
 					</Typography>
 				</Toolbar>
@@ -42,8 +44,11 @@ class App extends React.Component {
 	renderBody = () => {
 		return (
 			<div>
-				<h1>{title}</h1>
-				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
+				<h1>{}</h1>
+				<div style={{margin: '20px'}}>
+					<Link to={routes.ROUTE_ABOUT}>About</Link><br/>
+					<Link to={routes.ROUTE_TOPICS}>Topics</Link><br/>
+				</div>
 			</div>
 		)
 	};
@@ -51,7 +56,6 @@ class App extends React.Component {
 	render() {
 		// Reset the title of current page.
 		document.title = title;
-		console.log('Rending home/Home.js');
 		return (
 			<div>
 				{this.renderAppBar()}
@@ -63,4 +67,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default Home;

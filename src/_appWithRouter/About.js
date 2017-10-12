@@ -1,7 +1,7 @@
 /**
- * Created by fisher at 8:23 on 10/10/17.
+ * Created by fisher at 13:26 on 9/16/17.
  *
- * The home page.
+ * About page.
  */
 
 'use strict';
@@ -10,13 +10,15 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import IconButton from "material-ui/IconButton";
+import ArrowBackIcon from 'material-ui-icons/ArrowBack';
 
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
 
-const title = strings.title;
+const title = strings.about.title;
 
-class App extends React.Component {
+class About extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -28,10 +30,14 @@ class App extends React.Component {
 	}
 
 	renderAppBar = () => {
+		const {history} = this.props;
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<Typography type="title">
+					<IconButton color="contrast" onClick={() => history.goBack()}>
+						<ArrowBackIcon/>
+					</IconButton>
+					<Typography type="title" color="inherit">
 						{title}
 					</Typography>
 				</Toolbar>
@@ -43,7 +49,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<h1>{title}</h1>
-				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
+				<p>This is the about us page.</p>
 			</div>
 		)
 	};
@@ -51,7 +57,6 @@ class App extends React.Component {
 	render() {
 		// Reset the title of current page.
 		document.title = title;
-		console.log('Rending home/Home.js');
 		return (
 			<div>
 				{this.renderAppBar()}
@@ -63,4 +68,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default About;
