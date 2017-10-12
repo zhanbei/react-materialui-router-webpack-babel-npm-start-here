@@ -38,15 +38,9 @@ module.exports = {
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
-				screw_ie8: true, // React doesn't support IE8
-				// warnings: false
 				warnings: false
 			},
-			mangle: {
-				screw_ie8: true
-			},
 			output: {
-				screw_ie8: true,
 				comments: false
 			}
 		})
