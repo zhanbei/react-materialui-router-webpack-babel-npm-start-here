@@ -25,7 +25,7 @@ It is done and start adding components and building your own SPA now! {>;}
 
 ## Get Started With *React*, *MaterialUI*, *ReactRouter*, *Webpack*, *Babel*, and *NPM*
 
-[React][home-reactjs-org] is a JavaScript library for building user interfaces. It is impressive and powerful(*personal opinion* :), but also complex. It is not that easy to get started with React and related libraries, like *Material UI*, *Webpack*, and *Babel*. This repository is also a great place for you to practice and get started with *React*.
+[React][home-reactjs-org] is a JavaScript library for building user interfaces. It is impressive and powerful(*personal opinion* :), but also complex. It is not that easy to get started with React and related libraries, like *Material UI*, *React Router*, *Webpack*, and *Babel*. This repository is also a great place for you to practice and get started with *React*.
 
 ```bash
 # Clone this project to a specific folder.
