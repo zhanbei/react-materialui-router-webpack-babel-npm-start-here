@@ -11,7 +11,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from "material-ui/IconButton";
-import ArrowBackIcon from 'material-ui-icons/ArrowBack';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
