@@ -1,9 +1,3 @@
-/**
- * Created by fisher at 8:23 on 10/10/17.
- *
- * The home page.
- */
-
 'use strict';
 
 import React from 'react';
@@ -11,22 +5,12 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 
-import strings from './../resources/Strings';
-import styles from './../resources/Styles';
+const styles = require('./../resources/Styles');
+const strings = require('./strings');
 
 const title = strings.title;
 
-class App extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
-	componentDidMount() {
-
-	}
-
+class AppHome extends React.Component {
 	renderAppBar = () => {
 		return (
 			<AppBar position="static">
@@ -47,9 +31,7 @@ class App extends React.Component {
 	};
 
 	render() {
-		// Reset the title of current page.
 		document.title = title;
-		console.log('Rending home/Home.js');
 		return (
 			<div>
 				{this.renderAppBar()}
@@ -61,4 +43,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default AppHome;

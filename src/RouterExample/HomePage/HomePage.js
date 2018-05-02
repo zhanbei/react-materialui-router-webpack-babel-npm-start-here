@@ -1,9 +1,3 @@
-/**
- * Created by fisher at 13:25 on 9/16/17.
- *
- * The home page with router.
- */
-
 'use strict';
 
 import React from 'react';
@@ -12,15 +6,16 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 
-const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
+const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
 
-import strings from './../resources/Strings';
-import styles from './../resources/Styles';
-import routes from './../resources/Routes';
+const routes = require('../../resources/Routes');
+const styles = require('../../resources/Styles');
+const strings = require('./strings');
 
-const title = strings.home.title;
+const title = strings.title;
 
-class Home extends React.Component {
+// The home page with router.
+class HomePage extends React.Component {
 	goToAboutPage = () => mAppBrowserHistory.push(routes.ROUTE_ABOUT);
 	goToTopicsPage = () => mAppBrowserHistory.push(routes.ROUTE_TOPICS);
 
@@ -60,4 +55,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default HomePage;

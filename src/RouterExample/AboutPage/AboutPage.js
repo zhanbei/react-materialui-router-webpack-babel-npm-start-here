@@ -1,9 +1,3 @@
-/**
- * Created by fisher at 13:26 on 9/16/17.
- *
- * About page.
- */
-
 'use strict';
 
 import React from 'react';
@@ -13,23 +7,12 @@ import Typography from 'material-ui/Typography';
 import IconButton from "material-ui/IconButton";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-import strings from './../resources/Strings';
-import styles from './../resources/Styles';
+const styles = require('../../resources/Styles');
+const strings = require('./strings');
 
-let titlePrefix = strings.topic.titlePrefix;
-let title = titlePrefix;
+const title = strings.title;
 
-class Topic extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
-	componentDidMount() {
-
-	}
-
+class AboutPage extends React.Component {
 	renderAppBar = () => {
 		const {history} = this.props;
 		return (
@@ -45,21 +28,17 @@ class Topic extends React.Component {
 	};
 
 	renderBody = () => {
-		const {match} = this.props;
 		return (
 			<div>
 				<h1>{title}</h1>
-				<div>
-					<p>This is the topic page of <span style={{fontWeight: 'bold'}}>{match.params.topicId}</span></p>
-				</div>
+				<p>This is the about us page.</p>
 			</div>
 		)
 	};
 
 	render() {
-		const {match} = this.props;
 		// Reset the title of current page.
-		document.title = title = titlePrefix + match.params.topicId;
+		document.title = title;
 		return (
 			<div>
 				{this.renderAppBar()}
@@ -71,4 +50,4 @@ class Topic extends React.Component {
 	}
 }
 
-export default Topic;
+export default AboutPage;

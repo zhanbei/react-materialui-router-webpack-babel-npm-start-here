@@ -1,9 +1,3 @@
-/**
- * Created by fisher at 13:26 on 9/16/17.
- *
- * About page.
- */
-
 'use strict';
 
 import React from 'react';
@@ -14,15 +8,15 @@ import Button from 'material-ui/Button';
 import IconButton from "material-ui/IconButton";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
+const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
 
-import strings from './../resources/Strings';
-import styles from './../resources/Styles';
-import routes from './../resources/Routes';
+const routes = require('../../resources/Routes');
+const styles = require('../../resources/Styles');
+const strings = require('./strings');
 
-const title = strings.topics.title;
+const title = strings.title;
 
-class Topics extends React.Component {
+class TopicsPage extends React.Component {
 	goToTopicPage = (topic) => mAppBrowserHistory.push(routes.getTopicPath(topic));
 
 	renderAppBar = () => {
@@ -78,4 +72,4 @@ class Topics extends React.Component {
 	}
 }
 
-export default Topics;
+export default TopicsPage;

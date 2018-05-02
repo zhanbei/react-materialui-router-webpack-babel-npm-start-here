@@ -3,10 +3,10 @@
 import React from 'react'
 import {Route, Router, Switch} from 'react-router-dom'
 
-import Home from './_appWithRouter/Home';
-import About from './_appWithRouter/About';
-import Topics from './_appWithRouter/Topics';
-import Topic from './_appWithRouter/Topic';
+import HomePage from './RouterExample/HomePage/HomePage';
+import AboutPage from './RouterExample/AboutPage/AboutPage';
+import TopicsPage from './RouterExample/TopicsPage/TopicsPage';
+import TopicPage from './RouterExample/TopicPage/TopicPage';
 
 import routes from './resources/Routes';
 
@@ -19,10 +19,10 @@ class App extends React.Component {
 		return (
 			<Router history={mAppBrowserHistory}>
 				<Switch>
-					<Route exact path={routes.ROUTE_HOME} component={Home}/>
-					<Route exact path={routes.ROUTE_ABOUT} component={About}/>
-					<Route exact path={routes.ROUTE_TOPICS} component={Topics}/>
-					<Route exact path={routes.ROUTE_TOPIC} component={Topic}/>
+					<Route exact path={routes.ROUTE_HOME} component={HomePage}/>
+					<Route exact path={routes.ROUTE_ABOUT} component={AboutPage}/>
+					<Route exact path={routes.ROUTE_TOPICS} component={TopicsPage}/>
+					<Route exact path={routes.ROUTE_TOPIC} component={TopicPage}/>
 				</Switch>
 			</Router>
 		)

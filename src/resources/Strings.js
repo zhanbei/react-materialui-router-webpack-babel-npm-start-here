@@ -1,22 +1,7 @@
-/**
- * Created by fisher at 8:22 AM on 10/10/17.
- */
-
 'use strict';
 
 module.exports = {
+	// The default app title.
 	title: 'React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
-	home: {
-		title: 'Home - React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
-	},
-	about: {
-		title: 'About - React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
-	},
-	topics: {
-		title: 'Some Topics',
-	},
-	topic: {
-		titlePrefix: 'Topic Page of ',
-	},
 };
 
