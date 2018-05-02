@@ -1,23 +1,17 @@
-/**
- * Created by Fisher at 8:13 AM on 10/10/17.
- *
- * Webpack entrance.
- */
-
 'use strict';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import App from './AppWithRouter';
 
-// Needed for onTouchTap
-import injectTapEventPlugin from 'react-tap-event-plugin';
+const AppTheme = require('./resources/AppTheme');
+const muiTheme = createMuiTheme(AppTheme);
 
-injectTapEventPlugin();
-
+// The Webpack entrance.
 ReactDOM.render((
-		<div>
+		<MuiThemeProvider theme={muiTheme}>
 			<App/>
-		</div>
+		</MuiThemeProvider>
 	), document.getElementById('root')
 );
