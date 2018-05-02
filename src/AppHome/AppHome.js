@@ -26,7 +26,7 @@ class AppHome extends React.Component {
 		return (
 			<div className={classes.mainContentWithPaddingHolder}>
 				<h1>{title}</h1>
-				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
+				<p>{strings.description}</p>
 			</div>
 		)
 	};
