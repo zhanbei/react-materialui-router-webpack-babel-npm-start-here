@@ -1,18 +1,13 @@
-/**
- * Webpack configure File for development.
- */
-
 'use strict';
 
-let path = require('path');
-
 module.exports = {
+	mode: 'development',
 	// Don't attempt to continue if there are any errors.
 	bail: true,
 	devtool: 'source-map',
 	entry: './src',
 	output: {
-		path: path.join(__dirname, 'dist'),
+		path: __dirname + '/dist',
 		filename: 'main.js',
 	},
 	module: {
