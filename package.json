@@ -3,6 +3,7 @@
   "version": "0.8.0",
   "description": "A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "test": "echo 'testing'",
     "build": "webpack --config development.config.js | tee -a logs/build-development_`date +%Y-%m-%d`.txt",
