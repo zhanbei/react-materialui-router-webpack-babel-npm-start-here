@@ -3,32 +3,15 @@
   "version": "0.8.0",
   "description": "A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "test": "echo 'testing'",
-    "build": "webpack --config development.config.js",
-    "build-production": "webpack --config production.config.js"
+    "build": "webpack --config development.config.js | tee -a logs/build-development_`date +%Y-%m-%d`.txt",
+    "build-production": "webpack --config production.config.js | tee -a logs/build-production_`date +%Y-%m-%d`.txt"
   },
   "keywords": [
     "React, MaterialUI, Router, Webpack, Babel, NPM"
   ],
   "author": "Fisher",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "material-ui": "^1.0.0-beta.23",
-    "material-ui-icons": "^1.0.0-beta.17",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-tap-event-plugin": "^3.0.2",
-    "webpack": "^3.10.0"
-  },
   "license": "ISC"
 }

@@ -1,7 +1,3 @@
-/**
- * Created by fisher at 9:54 AM on 1/28/17.
- */
-
 'use strict';
 
 let home = '';

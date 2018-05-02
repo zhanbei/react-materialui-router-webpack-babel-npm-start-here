@@ -1,10 +1,9 @@
-/**
- * Webpack configure File for production.
- */
+'use strict';
 
 let webpack = require('webpack');
 
 module.exports = {
+	mode: 'production',
 	// Don't attempt to continue if there are any errors.
 	bail: true,
 	// We generate sourcemaps in production. This is slow but gives good results.
@@ -28,22 +27,8 @@ module.exports = {
 		]
 	},
 	plugins: [
-		// Minify the code.
-		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: JSON.stringify('production')
-			}
-		}),
 		// This helps ensure the builds are consistent if source hasn't changed:
-		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			},
-			output: {
-				comments: false
-			}
-		})
+		new webpack.optimize.OccurrenceOrderPlugin()
 	],
 	resolve: {
 		// Using PReact to substitute for React.
