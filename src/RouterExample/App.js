@@ -3,14 +3,14 @@
 import React from 'react'
 import {Route, Router, Switch} from 'react-router-dom'
 
-import HomePage from './RouterExample/HomePage/HomePage';
-import AboutPage from './RouterExample/AboutPage/AboutPage';
-import TopicsPage from './RouterExample/TopicsPage/TopicsPage';
-import TopicPage from './RouterExample/TopicPage/TopicPage';
+import HomePage from './HomePage/HomePage';
+import AboutPage from './AboutPage/AboutPage';
+import TopicsPage from './TopicsPage/TopicsPage';
+import TopicPage from './TopicPage/TopicPage';
 
-import routes from './resources/Routes';
+import routes from '../resources/Routes';
 
-const mAppBrowserHistory = require('./resources/AppHistory').getBrowserHistory();
+const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
 
 // App entrance used browser router with react-router.
 // @see https://reacttraining.com/react-router/web/example/basic

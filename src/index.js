@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
-import App from './AppWithRouter';
+import App from './RouterExample/App';
 
 const AppTheme = require('./resources/AppTheme');
 const muiTheme = createMuiTheme(AppTheme);
