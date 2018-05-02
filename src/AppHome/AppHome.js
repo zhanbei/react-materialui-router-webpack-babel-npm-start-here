@@ -1,11 +1,12 @@
 'use strict';
 
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 
-const styles = require('./../resources/Styles');
+const muiStyles = require('./mui-styles');
 const strings = require('./strings');
 
 const title = strings.title;
@@ -13,7 +14,7 @@ const title = strings.title;
 class AppHome extends React.Component {
 	renderAppBar = () => {
 		return (
-			<AppBar position="static">
+			<AppBar>
 				<Toolbar>
 					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
@@ -21,9 +22,9 @@ class AppHome extends React.Component {
 		);
 	};
 
-	renderBody = () => {
+	renderAppBody = ({classes} = this.props) => {
 		return (
-			<div>
+			<div className={classes.mainContentWithPaddingHolder}>
 				<h1>{title}</h1>
 				<p>A basic front-end project integrated with React, MaterialUI, ReactRouter, Webpack, Babel, NPM.</p>
 			</div>
@@ -32,15 +33,15 @@ class AppHome extends React.Component {
 
 	render() {
 		document.title = title;
+		const {classes} = this.props;
 		return (
 			<div>
 				{this.renderAppBar()}
-				<div style={styles.main}>
-					{this.renderBody()}
-				</div>
+				<div className={classes.toolbar}/>
+				{this.renderAppBody()}
 			</div>
 		);
 	}
 }
 
-export default AppHome;
+export default withStyles(muiStyles)(AppHome);

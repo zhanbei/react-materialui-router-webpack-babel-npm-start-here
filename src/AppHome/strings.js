@@ -1,8 +1,6 @@
 'use strict';
 
-const strings = require('../resources/Strings');
-
 module.exports = {
-	title: strings.title,
+	title: 'React MaterialUI ReactRouter Webpack Babel NPM Start HERE',
 };
 

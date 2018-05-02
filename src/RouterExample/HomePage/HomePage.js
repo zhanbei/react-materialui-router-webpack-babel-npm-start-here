@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
@@ -9,7 +10,7 @@ import Button from 'material-ui/Button';
 const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
 
 const routes = require('../../resources/Routes');
-const styles = require('../../resources/Styles');
+const muiStyles = require('./mui-styles');
 const strings = require('./strings');
 
 const title = strings.title;
@@ -21,7 +22,7 @@ class HomePage extends React.Component {
 
 	renderAppBar = () => {
 		return (
-			<AppBar position="static">
+			<AppBar>
 				<Toolbar>
 					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
@@ -29,9 +30,9 @@ class HomePage extends React.Component {
 		);
 	};
 
-	renderBody = () => {
+	renderAppBody = ({classes} = this.props) => {
 		return (
-			<div>
+			<div className={classes.mainContentWithPaddingHolder}>
 				<h1>{title}</h1>
 				<div style={{margin: '20px'}}>
 					<Button color="primary" onClick={this.goToAboutPage}>About Page</Button>
@@ -42,17 +43,16 @@ class HomePage extends React.Component {
 	};
 
 	render() {
-		// Reset the title of current page.
 		document.title = title;
+		const {classes} = this.props;
 		return (
 			<div>
 				{this.renderAppBar()}
-				<div style={styles.main}>
-					{this.renderBody()}
-				</div>
+				<div className={classes.toolbar}/>
+				{this.renderAppBody()}
 			</div>
 		);
 	}
 }
 
-export default HomePage;
+export default withStyles(muiStyles)(HomePage);

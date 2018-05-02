@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
@@ -11,7 +12,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
 
 const routes = require('../../resources/Routes');
-const styles = require('../../resources/Styles');
+const muiStyles = require('./mui-styles');
 const strings = require('./strings');
 
 const title = strings.title;
@@ -20,11 +21,10 @@ class TopicsPage extends React.Component {
 	goToTopicPage = (topic) => mAppBrowserHistory.push(routes.getTopicPath(topic));
 
 	renderAppBar = () => {
-		const {history} = this.props;
 		return (
-			<AppBar position="static">
+			<AppBar>
 				<Toolbar>
-					<IconButton color="inherit" onClick={() => history.goBack()}>
+					<IconButton color="inherit" onClick={() => mAppBrowserHistory.goBack()}>
 						<ArrowBackIcon/>
 					</IconButton>
 					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
@@ -33,9 +33,9 @@ class TopicsPage extends React.Component {
 		);
 	};
 
-	renderBody = () => {
+	renderAppBody = ({classes} = this.props) => {
 		return (
-			<div>
+			<div className={classes.mainContentWithPaddingHolder}>
 				<h2>Some Topics of Pages</h2>
 				<ul>
 					<li>
@@ -59,17 +59,16 @@ class TopicsPage extends React.Component {
 	};
 
 	render() {
-		// Reset the title of current page.
 		document.title = title;
+		const {classes} = this.props;
 		return (
 			<div>
 				{this.renderAppBar()}
-				<div style={styles.main}>
-					{this.renderBody()}
-				</div>
+				<div className={classes.toolbar}/>
+				{this.renderAppBody()}
 			</div>
 		);
 	}
 }
 
-export default TopicsPage;
+export default withStyles(muiStyles)(TopicsPage);
