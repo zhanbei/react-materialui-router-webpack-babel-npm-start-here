@@ -31,9 +31,7 @@ class App extends React.Component {
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<Typography type="title">
-						{title}
-					</Typography>
+					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);

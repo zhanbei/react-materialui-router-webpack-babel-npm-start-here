@@ -10,9 +10,11 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 import IconButton from "material-ui/IconButton";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import {Route, Link, HashRouter} from 'react-router-dom'
+
+const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
 
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
@@ -21,58 +23,43 @@ import routes from './../resources/Routes';
 const title = strings.topics.title;
 
 class Topics extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
-	componentDidMount() {
-
-	}
+	goToTopicPage = (topic) => mAppBrowserHistory.push(routes.getTopicPath(topic));
 
 	renderAppBar = () => {
 		const {history} = this.props;
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<IconButton color="contrast" onClick={() => history.goBack()}>
+					<IconButton color="inherit" onClick={() => history.goBack()}>
 						<ArrowBackIcon/>
 					</IconButton>
-					<Typography type="title" color="inherit">
-						{title}
-					</Typography>
+					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);
 	};
 
 	renderBody = () => {
-		const {match} = this.props;
 		return (
 			<div>
 				<h2>Some Topics of Pages</h2>
 				<ul>
 					<li>
-						<Link to={routes.getTopicPath('rendering')}>
+						<Button color="primary" onClick={() => this.goToTopicPage('rendering')}>
 							Rendering with React
-						</Link>
+						</Button>
 					</li>
 					<li>
-						<Link to={routes.getTopicPath('components')}>
+						<Button color="primary" onClick={() => this.goToTopicPage('components')}>
 							Components
-						</Link>
+						</Button>
 					</li>
 					<li>
-						<Link to={routes.getTopicPath('props-v-state')}>
+						<Button color="primary" onClick={() => this.goToTopicPage('props-v-state')}>
 							Props v. State
-						</Link>
+						</Button>
 					</li>
 				</ul>
-
-				<Route exact path={match.url} render={() => (
-					<h3>Please select a topic.</h3>
-				)}/>
 			</div>
 		)
 	};

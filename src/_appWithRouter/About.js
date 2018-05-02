@@ -34,12 +34,10 @@ class About extends React.Component {
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<IconButton color="contrast" onClick={() => history.goBack()}>
+					<IconButton color="inherit" onClick={() => history.goBack()}>
 						<ArrowBackIcon/>
 					</IconButton>
-					<Typography type="title" color="inherit">
-						{title}
-					</Typography>
+					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);

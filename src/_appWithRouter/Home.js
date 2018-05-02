@@ -10,7 +10,9 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
-import {Route, Link, HashRouter} from 'react-router-dom'
+import Button from 'material-ui/Button';
+
+const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
 
 import strings from './../resources/Strings';
 import styles from './../resources/Styles';
@@ -19,23 +21,14 @@ import routes from './../resources/Routes';
 const title = strings.home.title;
 
 class Home extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
-	componentDidMount() {
-
-	}
+	goToAboutPage = () => mAppBrowserHistory.push(routes.ROUTE_ABOUT);
+	goToTopicsPage = () => mAppBrowserHistory.push(routes.ROUTE_TOPICS);
 
 	renderAppBar = () => {
 		return (
 			<AppBar position="static">
 				<Toolbar>
-					<Typography type="title" color="inherit">
-						{title}
-					</Typography>
+					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);
@@ -44,10 +37,10 @@ class Home extends React.Component {
 	renderBody = () => {
 		return (
 			<div>
-				<h1>{}</h1>
+				<h1>{title}</h1>
 				<div style={{margin: '20px'}}>
-					<Link to={routes.ROUTE_ABOUT}>About</Link><br/>
-					<Link to={routes.ROUTE_TOPICS}>Topics</Link><br/>
+					<Button color="primary" onClick={this.goToAboutPage}>About Page</Button>
+					<Button color="primary" onClick={this.goToTopicsPage}>Topics Page</Button>
 				</div>
 			</div>
 		)
