@@ -8,7 +8,7 @@ import AboutPage from './AboutPage/AboutPage';
 import TopicsPage from './TopicsPage/TopicsPage';
 import TopicPage from './TopicPage/TopicPage';
 
-import routes from '../resources/Routes';
+import routes from '../resources/AppRoutes';
 
 const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
 
