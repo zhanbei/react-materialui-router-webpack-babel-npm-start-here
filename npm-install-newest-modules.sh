@@ -9,13 +9,14 @@ npm install --save-dev \
 	babel-loader \
 	babel-plugin-transform-class-properties \
 	babel-plugin-transform-object-rest-spread \
-	babel-preset-env babel-preset-react \
+	babel-preset-env \
+	babel-preset-react \
 	material-ui@next \
-	material-ui-icons \
+	@material-ui/icons \
 	prop-types \
 	react \
 	react-dom \
 	react-router \
 	react-router-dom \
-	react-tap-event-plugin \
-	webpack
+	webpack \
+	webpack-cli
