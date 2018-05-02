@@ -1,14 +1,29 @@
-/**
- * Created by fisher at 8:14 AM on 10/10/17.
- *
- * App Theme for MaterialUI.
- */
+'use strict';
 
-export default {
-	fontFamily: 'Roboto, sans-serif',
+// @see https://material-ui-next.com/customization/themes/
+module.exports = {
 	palette: {
-		// type: 'dark'
-	}, appBar: {
-		height: 50,
-	}
+		// @see https://material.io/color/#!/?view.left=0&view.right=0&primary.color=AA00FF&primary.text.color=ffffff&secondary.color=827717&secondary.text.color=ffffff
+		primary: {
+			light: '#e254ff',
+			main: '#aa00ff', // purple[A700]
+			dark: '#7200ca',
+			contrastText: '#ffffff',
+		},
+		secondary: {
+			light: '#b4a647',
+			main: '#827717', // lime[900]
+			dark: '#524c00',
+			contrastText: '#ffffff',
+		},
+	},
+	overrides: {
+		MuiButton: {
+			root: {
+				// Making the button not uppercase by default,
+				// since we can manually set the text uppercase.
+				textTransform: 'inherit',
+			},
+		},
+	},
 };
