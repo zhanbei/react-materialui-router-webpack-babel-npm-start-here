@@ -11,6 +11,7 @@ npm install --save-dev \
 	babel-plugin-transform-object-rest-spread \
 	babel-preset-env \
 	babel-preset-react \
+	css-loader \
 	@material-ui/core \
 	@material-ui/icons \
 	prop-types \
@@ -19,5 +20,6 @@ npm install --save-dev \
 	react-router \
 	react-router-dom \
 	react-transition-group \
+	style-loader \
 	webpack \
 	webpack-cli \
