@@ -18,5 +18,6 @@ npm install --save-dev \
 	react-dom \
 	react-router \
 	react-router-dom \
+	react-transition-group \
 	webpack \
 	webpack-cli \
