@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
+const AppHistory = require('../../resources/AppHistory');
 
 const routes = require('../../resources/AppRoutes');
 const muiStyles = require('./mui-styles');
@@ -18,13 +18,13 @@ const strings = require('./strings');
 const title = strings.title;
 
 class TopicsPage extends React.Component {
-	goToTopicPage = (topic) => mAppBrowserHistory.push(routes.getTopicPath(topic));
+	goToTopicPage = (topic) => AppHistory.push(routes.getTopicPath(topic));
 
 	renderAppBar = () => {
 		return (
 			<AppBar>
 				<Toolbar>
-					<IconButton color="inherit" onClick={() => mAppBrowserHistory.goBack()}>
+					<IconButton color="inherit" onClick={() => AppHistory.goBack()}>
 						<ArrowBackIcon/>
 					</IconButton>
 					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
+const AppHistory = require('../../resources/AppHistory');
 
 const muiStyles = require('./mui-styles');
 const strings = require('./strings');
@@ -20,7 +20,7 @@ class AboutPage extends React.Component {
 		return (
 			<AppBar>
 				<Toolbar>
-					<IconButton color="inherit" onClick={() => mAppBrowserHistory.goBack()}>
+					<IconButton color="inherit" onClick={() => AppHistory.goBack()}>
 						<ArrowBackIcon/>
 					</IconButton>
 					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>

@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-const mAppBrowserHistory = require('../../resources/AppHistory').getBrowserHistory();
+const AppHistory = require('../../resources/AppHistory');
 
 const routes = require('../../resources/AppRoutes');
 const muiStyles = require('./mui-styles');
@@ -17,8 +17,8 @@ const title = strings.title;
 
 // The home page with router.
 class HomePage extends React.Component {
-	goToAboutPage = () => mAppBrowserHistory.push(routes.ROUTE_ABOUT);
-	goToTopicsPage = () => mAppBrowserHistory.push(routes.ROUTE_TOPICS);
+	goToAboutPage = () => AppHistory.push(routes.ROUTE_ABOUT);
+	goToTopicsPage = () => AppHistory.push(routes.ROUTE_TOPICS);
 
 	renderAppBar = () => {
 		return (

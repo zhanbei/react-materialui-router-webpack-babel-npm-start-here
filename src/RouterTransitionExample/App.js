@@ -10,7 +10,8 @@ import TopicPage from './TopicPage/TopicPage';
 
 import routes from '../resources/AppRoutes';
 
-const mAppBrowserHistory = require('../resources/AppHistory').getBrowserHistory();
+const AppHistory = require('../resources/AppHistory');
+const mAppBrowserHistory = AppHistory.getBrowserHistory();
 
 // App entrance used browser router with react-router.
 // @see https://reacttraining.com/react-router/web/example/basic
