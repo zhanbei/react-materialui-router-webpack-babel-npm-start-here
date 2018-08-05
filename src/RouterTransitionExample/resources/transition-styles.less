@@ -1,0 +1,58 @@
+// @see https://medium.com/@pshrmn/a-shallow-dive-into-react-router-v4-animated-transitions-4b73f634992a
+
+/* fade in */
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: all 500ms ease-in;
+}
+
+/* slide in from right */
+
+// Common properties for slide-in sequences.
+.slide-in-commons {
+  position: absolute;
+  /*position: relative;*/
+  width: 100%;
+  height: 100%;
+}
+
+.slide-in-enter {
+  .slide-in-commons();
+  left: 100%;
+  opacity: 0.01;
+}
+
+.slide-in-enter-active {
+  .slide-in-commons();
+  left: 0;
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.slide-in-exit {
+  .slide-in-commons();
+  left: 0;
+  opacity: 0.5;
+}
+
+.slide-in-exit-active {
+  .slide-in-commons();
+  /*left: 100%;*/
+  left: 0;
+  opacity: 0.01;
+  transition: all 500ms ease-in;
+}
