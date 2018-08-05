@@ -1,4 +1,4 @@
 
 # Ignore the generated main.js
 main.js
-main.js.map
+*.js.map
