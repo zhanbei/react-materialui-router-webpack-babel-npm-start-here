@@ -12,6 +12,8 @@ npm install --save-dev \
 	babel-preset-env \
 	babel-preset-react \
 	css-loader \
+	less \
+	less-loader \
 	@material-ui/core \
 	@material-ui/icons \
 	prop-types \
