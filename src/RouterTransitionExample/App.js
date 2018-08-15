@@ -3,7 +3,7 @@
 import React from 'react'
 import {Route, Router, Switch, withRouter} from 'react-router-dom'
 import {Transition, CSSTransition, TransitionGroup} from 'react-transition-group';
-import './resources/transition-styles.less';
+import './resources/transition-fade-inout.less';
 import HomePage from './HomePage/HomePage';
 import AboutPage from './AboutPage/AboutPage';
 import TopicsPage from './TopicsPage/TopicsPage';
