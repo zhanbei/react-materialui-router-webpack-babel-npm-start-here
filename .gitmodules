@@ -1,3 +1,6 @@
 [submodule ".configs"]
 	path = .configs
 	url = https://github.com/zhanbei/react-materialui-webpack-babel-configs.git
+[submodule "utils"]
+	path = utils
+	url = https://github.com/zhanbei/js-utils

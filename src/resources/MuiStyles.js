@@ -1,11 +1,14 @@
 'use strict';
 
+const flexColumn = {display: 'flex', flexFlow: 'column nowrap'};
+
 module.exports = theme => {
 	const unit = theme.spacing.unit;
 	return {
 		// The style for each standalone single page, which usually has a app bar,
 		// a optional left navigation, and a body with main content.
-		pageHolder: {display: 'flex', flexFlow: 'column nowrap', position: 'absolute', width: '100%', height: '100%'},
+		// Set the background of all pages to white to disable the transparent pages between transitions.
+		pageHolder: {...flexColumn, position: 'absolute', width: '100%', height: '100%', background: 'white'},
 		// The style for the app bar, which displays above the left navigation.
 		appBar: {zIndex: theme.zIndex.drawer + 1},
 		// The style for the app bar, which often has a min height of 64px.

@@ -3,7 +3,7 @@
 import React from 'react'
 import {Route, Router, Switch, withRouter} from 'react-router-dom'
 import {Transition, CSSTransition, TransitionGroup} from 'react-transition-group';
-import './resources/transition-styles.less';
+import './resources/transition-fade-inout.less';
 import HomePage from './HomePage/HomePage';
 import AboutPage from './AboutPage/AboutPage';
 import TopicsPage from './TopicsPage/TopicsPage';
@@ -12,6 +12,7 @@ import TopicPage from './TopicPage/TopicPage';
 const routes = require('../resources/AppRoutes');
 const AppHistory = require('../resources/AppHistory');
 const mAppBrowserHistory = AppHistory.getBrowserHistory();
+const TransitionManager = require('./helpers/TransitionManager');
 
 // @see https://reactcommunity.org/react-transition-group/
 // @see https://reacttraining.com/react-router/web/example/animated-transitions
@@ -20,8 +21,7 @@ const RoutesWithTransition = withRouter(({location}) => (
 	<TransitionGroup>
 		<CSSTransition
 			key={location.key}
-			// Keep classNames and timeout consistent with './resources/the transition-styles.less'
-			classNames={'slide-in'}
+			classNames={TransitionManager.getNextTransitionClassName()}
 			timeout={500}
 		>
 			<Switch location={location}>
