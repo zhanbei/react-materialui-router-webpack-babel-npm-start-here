@@ -24,7 +24,7 @@ class HomePage extends React.Component {
 		return (
 			<AppBar>
 				<Toolbar>
-					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
+					<Typography variant="h6" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);

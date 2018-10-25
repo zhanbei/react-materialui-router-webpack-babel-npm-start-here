@@ -24,7 +24,7 @@ class TopicPage extends React.Component {
 					<IconButton color="inherit" onClick={() => AppHistory.goBack()}>
 						<ArrowBackIcon/>
 					</IconButton>
-					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
+					<Typography variant="h6" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);

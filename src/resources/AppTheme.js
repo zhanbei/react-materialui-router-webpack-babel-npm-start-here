@@ -17,6 +17,10 @@ module.exports = {
 			contrastText: '#ffffff',
 		},
 	},
+	// @see https://material-ui.com/style/typography/#migration-to-typography-v2
+	typography: {
+		useNextVariants: true,
+	},
 	overrides: {
 		MuiButton: {
 			root: {

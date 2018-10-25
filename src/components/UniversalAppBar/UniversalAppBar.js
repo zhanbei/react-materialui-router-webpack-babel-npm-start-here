@@ -35,7 +35,7 @@ class UniversalAppBar extends React.Component {
 			<AppBar position={'static'} className={classes.appBar}>
 				<Toolbar>
 					{this.renderLeftIcon()}
-					<Typography variant="title" color="inherit" style={{flex: 1}}>{title}</Typography>
+					<Typography variant="h6" color="inherit" style={{flex: 1}}>{title}</Typography>
 				</Toolbar>
 			</AppBar>
 		);
